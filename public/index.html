@@ -1,0 +1,78 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pookie Letters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pookie Letters</h1>
+    </header>
+
+    <main>
+        <button id="writeLetterBtn">Write a Letter</button>
+        <div id="lettersContainer">
+            <h2>Letters</h2>
+            <div id="letters"></div>
+        </div>
+    </main>
+
+    <div id="letterWritingPopup" class="hidden">
+        <div class="popup-content">
+            <div class="letter-controls">
+                <button id="closeLetterBtn">&times;</button>
+                <select id="user">
+                    <option value="Mati">Mati</option>
+                    <option value="Mayank">Mayank</option>
+                    <!-- Add more user options -->
+                </select>
+                <div id="selectedStamp" class="stamp-preview"></div>
+                <label for="fileUpload" class="file-upload-btn">Add Files</label>
+                <input type="file" id="fileUpload" accept="image/*,video/*,audio/*" multiple hidden>
+                <button id="pinLetterBtn" class="pin-icon">📌</button>
+            </div>
+            <div id="wordCount">0 words (0 characters)</div>
+            <div id="pinnedLetter" class="hidden"></div>
+            <div id="letterContent" contenteditable="true"></div>
+            <div id="attachmentPreview"></div>
+            <button id="sendLetterBtn">Send Letter</button>
+        </div>
+    </div>
+
+    <div id="stampGallery" class="hidden">
+        <div class="gallery-content">
+            <h3>Select a Stamp</h3>
+            <div class="stamp-options">
+                <img src="stamps/stamp1.png" alt="Stamp 1" data-stamp="stamp1">
+                <img src="stamps/stamp2.png" alt="Stamp 2" data-stamp="stamp2">
+                <img src="stamps/stamp3.png" alt="Stamp 3" data-stamp="stamp3">
+                <img src="stamps/stamp4.png" alt="Stamp 4" data-stamp="stamp4">
+                <img src="stamps/stamp5.png" alt="Stamp 5" data-stamp="stamp5">
+                <img src="stamps/stamp6.png" alt="Stamp 6" data-stamp="stamp6">
+                <img src="stamps/stamp7.png" alt="Stamp 7" data-stamp="stamp7">
+                <img src="stamps/stamp8.png" alt="Stamp 8" data-stamp="stamp8">
+             
+            </div>
+        </div>
+    </div>
+
+    <div id="fullscreenLetter" class="hidden">
+        <button id="closeFullscreen">&times;</button>
+        <div id="fullscreenLetterContent"></div>
+    </div>
+
+    <div id="confirmSendDialog" class="hidden">
+        <div class="dialog-content">
+            <h3>Send Letter?</h3>
+            <p>Are you sure you want to send this letter?</p>
+            <button id="confirmSend">Yes, Send</button>
+            <button id="cancelSend">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
